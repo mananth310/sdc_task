@@ -7,7 +7,7 @@ $sql1="select * from student_table";
 	if($res){
 		$out="";
 		while($row=mysqli_fetch_assoc($res)){
-			$out .="<tr><td>".$row['id']."</td><td>".$row['student_name']."</td><td>".$row['username']."</td><td><button class='btn btn-info' type='button' >Edit</button></td></tr>";
+			$out .="<tr id='row".$row['id']."'><td></td><td>".$row['student_name']."</td><td>".$row['username']."</td><td><button class='btn btn-info' type='button' onClick='functionEdit(this)' data-id='".$row['id']."'>Edit</button></td><td><button class='btn btn-danger' type='button' onClick='functionDelete(this)' data-id='".$row['id']."'>Delete</button></td></tr>";
 		}
 	}
 	else{
